@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerkely Williams | Systems Engineer & Backend Developer</title>
+    <meta name="description" content="Portafolio profesional de Nerkely Williams - Ingeniera de Sistemas enfocada en backend, Clean Architecture, bases de datos relacionales y automatización de procesos.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="logo">&lt;NerkelyWilliams /&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#about">// Perfil</a></li>
+            <li><a href="#metrics">// Impacto</a></li>
+            <li><a href="#projects">// Casos de Estudio</a></li>
+            <li><a href="#skills">// Stack Técnico</a></li>
+            <li><a href="#contact">// Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="hero-container">
+            <!-- Foto de Perfil -->
+            <div class="hero-avatar">
+                <img src="img/profile.jpg" alt="Nerkely Williams - Systems Engineer">
+            </div>
+
+            <div class="hero-content">
+                <div class="badge">Systems Engineer | Backend & Software Architecture</div>
+                <h1>Nerkely Williams</h1>
+                <p class="hero-subtitle">
+                    Ingeniera de Sistemas enfocada en <strong>desarrollo backend</strong>, <strong>Clean Architecture</strong>, optimización de bases de datos relacionales (PostgreSQL) y creación de APIs robustas[cite: 1].
+                </p>
+                <p class="hero-description">
+                    Apasionada por la ingeniería de software moderna, la concurrencia y la eficiencia en el procesamiento de datos. Aplicando activamente <strong>Go (Golang)</strong> y <strong>TypeScript</strong> en soluciones de producción[cite: 1].
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Explorar Casos de Estudio</a>
+                    <a href="https://github.com" target="_blank" class="btn btn-secondary">GitHub</a>
+                    <a href="img/resume.pdf" download class="btn btn-outline">Descargar CV (PDF)</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Métricas de Impacto -->
+    <section id="metrics" class="section">
+        <h2 class="section-title"><span>01.</span> Impacto Técnico en Producción</h2>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-number">+15,000</div>
+                <div class="metric-label">Registros Mensuales Gestionados</div>
+                <p>Estructuración de transacciones ACID para ingesta masiva y consistente de datos[cite: 1].</p>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">-40%</div>
+                <div class="metric-label">Reducción de Latencia</div>
+                <p>Optimización de consultas complejas e infraestructura de bases de datos[cite: 1].</p>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">99.9%</div>
+                <div class="metric-label">Consistencia de Inventario</div>
+                <p>Garantía de integridad transaccional no bloqueante entre múltiples sedes[cite: 1].</p>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">-30%</div>
+                <div class="metric-label">Ausentismo de Pacientes</div>
+                <p>Automatización de flujos con integración de APIs y dashboards BI[cite: 1].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Estudio / Proyectos -->
+    <section id="projects" class="section">
+        <h2 class="section-title"><span>02.</span> Casos de Estudio</h2>
+        
+        <div class="projects-list">
+
+            <!-- Proyecto 1 -->
+            <article class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">Backend Engineering / Go</span>
+                    <h3>Indexer Concurrente & Arquitectura Backend (Altrueer)</h3>
+                </div>
+                <div class="project-body">
+                    <p><strong>Desafío:</strong> Diseñar un motor de ingesta para procesar eventos de la capa 1 (L1) de la red sin generar cuellos de botella ni bloquear el hilo principal de la aplicación[cite: 1].</p>
+                    <p><strong>Solución Técnica:</strong> Desarrollo de infraestructura backend en <strong>Go</strong> aplicando **Clean Architecture** y **PostgreSQL (PostGIS)**[cite: 1]. Integración de microservicios mediante **gRPC/Protobuf** y desarrollo de un indexador concurrente utilizando *Goroutines* y *Channels* para procesamiento en segundo plano[cite: 1].</p>
+                    
+                    <div class="tech-stack">
+                        <span>Go (Golang)</span>
+                        <span>Clean Architecture</span>
+                        <span>gRPC</span>
+                        <span>Protobuf</span>
+                        <span>PostgreSQL</span>
+                        <span>PostGIS</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">Data Architecture / Health Tech</span>
+                    <h3>Sistema de Gestión & Trazabilidad de Inventario Masivo</h3>
+                </div>
+                <div class="project-body">
+                    <p><strong>Desafío:</strong> Ingesta e inventario de más de 15,000 registros médicos mensuales con alta concurrencia en múltiples sedes sin pérdida de consistencia de datos[cite: 1].</p>
+                    <p><strong>Solución Técnica:</strong> Diseño de arquitectura backend en **Go** con **PostgreSQL** centrada en transacciones ACID optimizadas[cite: 1]. Implementación de un sistema de Control de Acceso Basado en Roles (RBAC) con trazabilidad y auditoría en tiempo real[cite: 1].</p>
+                    <p><strong>Resultados:</strong> Reducción de la latencia en consultas complejas en un 40% y garantía de consistencia del 99.9% en inventario distribuido[cite: 1].</p>
+                    
+                    <div class="tech-stack">
+                        <span>Go</span>
+                        <span>PostgreSQL</span>
+                        <span>ACID Transactions</span>
+                        <span>RBAC</span>
+                        <span>REST APIs</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Proyecto 3 -->
+            <article class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">Full Stack / Process Automation</span>
+                    <h3>Plataforma Médica Multi-Rol & Dashboards BI</h3>
+                </div>
+                <div class="project-body">
+                    <p><strong>Desafío:</strong> Reducir el ausentismo en consultas clínicas y optimizar el flujo operativo del personal médico[cite: 1].</p>
+                    <p><strong>Solución Técnica:</strong> Desarrollo de plataforma web multi-rol con dashboards de Inteligencia de Negocios (BI) en tiempo real e integración con la API de WhatsApp para automatización y confirmación de citas[cite: 1].</p>
+                    <p><strong>Resultados:</strong> Reducción directa del 30% en ausentismo de usuarios y aceleración en el flujo de trabajo clínico[cite: 1].</p>
+                    
+                    <div class="tech-stack">
+                        <span>TypeScript</span>
+                        <span>JavaScript</span>
+                        <span>REST APIs</span>
+                        <span>WhatsApp API</span>
+                        <span>BI Dashboards</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Stack Técnico -->
+    <section id="skills" class="section">
+        <h2 class="section-title"><span>03.</span> Dominio Técnico & Tecnologías</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Lenguajes & Backend</h3>
+                <ul>
+                    <li>Go (Golang) - Desarrollo Activo</li>
+                    <li>TypeScript / JavaScript</li>
+                    <li>Python</li>
+                    <li>gRPC / Protobuf</li>
+                    <li>REST APIs</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Arquitectura & Bases de Datos</h3>
+                <ul>
+                    <li>Clean Architecture</li>
+                    <li>PostgreSQL / PostGIS</li>
+                    <li>TimescaleDB</li>
+                    <li>Redis (Caching)</li>
+                    <li>GORM & Optimización de Consultas</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>DevOps, Cloud & Herramientas</h3>
+                <ul>
+                    <li>Git / GitHub</li>
+                    <li>Render / Linux Deployments</li>
+                    <li>SSL / Seguridad Web</li>
+                    <li>Automatización de Procesos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfil Único / Ventaja Competitiva -->
+    <section id="about" class="section">
+        <h2 class="section-title"><span>04.</span> Propuesta de Valor Única</h2>
+        <div class="about-card">
+            <h3>Ingeniería de Sistemas + Formación Médica</h3>
+            <p>
+                Cuento con una titulación como <strong>Ingeniera de Sistemas</strong> (Politécnico Santiago Mariño) combinada con estudios en <strong>Medicina</strong> (Universidad de Carabobo)[cite: 1].
+            </p>
+            <p>
+                Esta perspectiva dual me otorga una ventaja competitiva para colaborar en proyectos de sectores críticos (Health Tech, Bioinformática, Automatización): combino el rigor analítico del diseño de software backend con un entendimiento profundo del dominio clínico y operativo donde la precisión es vital[cite: 1].
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contact" class="footer">
+        <h2>¿Hablamos?</h2>
+        <p>Actualmente disponible para oportunidades laborales en Ingeniería Backend, Desarrollo Full Stack y Arquitectura de Software.</p>
+        
+        <div class="contact-links">
+            <a href="mailto:nerkelywilliams@gmail.com" class="btn btn-primary">nerkelywilliams@gmail.com</a>
+            <a href="tel:+584144881440" class="btn btn-outline">+58 414-4881440</a>
+        </div>
+        
+        <p class="copyright">
+            © 2026 Nerkely Williams. Diseñado para rendimiento y simplicidad.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
