@@ -227,15 +227,19 @@
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Portafolio — Ingeniera de Sistemas</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header class="topbar">
-            <div class="identity">
-                <h1 class="mono">Nombre Apellido</h1>
-                <p class="role">Ingeniera de Sistemas — Backend / Arquitectura de Software</p>
-            </div>
+            <div class="logo mono">&lt;NerkelyWilliams /&gt;</div>
+            <nav class="nav mono">
+                <a href="#profile">Perfil</a>
+                <a href="#impact">Impacto</a>
+                <a href="#cases">Casos</a>
+                <a href="#stack">Stack</a>
+                <a href="#contact">Contacto</a>
+            </nav>
             <div class="techs">
                 <span class="tech mono">Go</span>
                 <span class="tech mono">PostgreSQL</span>
@@ -244,63 +248,58 @@
         </header>
 
         <main class="container">
-            <section id="metrics" aria-label="Métricas del sistema">
-                <h2 class="mono">Dashboard</h2>
-                <div class="metrics-grid">
-                    <div class="metric card">
-                        <div class="metric-header">Uptime</div>
-                        <div class="metric-body">
-                            <span class="ping" aria-hidden="true"></span>
-                            <span class="metric-value mono">99.99%</span>
+            <section class="hero" id="profile">
+                <div class="hero-inner">
+                    <div class="hero-left">
+                        <h1 class="hud-title mono">Nombre Apellido</h1>
+                        <p class="role">Ingeniera de Sistemas — Backend / Arquitectura de Software</p>
+                        <div class="badges">
+                            <span class="tech mono">Go</span>
+                            <span class="tech mono">PostgreSQL</span>
+                            <span class="tech mono">TypeScript</span>
                         </div>
                     </div>
-
-                    <div class="metric card">
-                        <div class="metric-header">Requests / s</div>
-                        <div class="metric-body">
-                            <span class="ping offline" aria-hidden="true"></span>
-                            <span class="metric-value mono">1,234</span>
-                        </div>
-                    </div>
-
-                    <div class="metric card">
-                        <div class="metric-header">Latency P50</div>
-                        <div class="metric-body">
-                            <span class="ping" aria-hidden="true"></span>
-                            <span class="metric-value mono">12 ms</span>
+                    <div class="hero-right">
+                        <div class="hero-panel card sci-card">
+                            <div class="metrics-grid">
+                                <div class="metric sci-card">
+                                    <div class="metric-header mono">Uptime</div>
+                                    <div class="metric-body">
+                                        <span class="ping neon" aria-hidden="true"></span>
+                                        <span class="metric-value mono">99.99%</span>
+                                    </div>
+                                </div>
+                                <div class="metric sci-card">
+                                    <div class="metric-header mono">Req / s</div>
+                                    <div class="metric-body">
+                                        <span class="ping neon" aria-hidden="true"></span>
+                                        <span class="metric-value mono">1,234</span>
+                                    </div>
+                                </div>
+                                <div class="metric sci-card">
+                                    <div class="metric-header mono">Latency P50</div>
+                                    <div class="metric-body">
+                                        <span class="ping offline" aria-hidden="true"></span>
+                                        <span class="metric-value mono">12 ms</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="scanlines" aria-hidden="true"></div>
             </section>
 
             <section id="projects" aria-label="Proyectos recientes">
-                <h2 class="mono">Proyectos</h2>
+                <h2 class="mono hud-subtitle">Proyectos</h2>
                 <div class="projects-grid">
-                    <article class="project card code-like">
-                        <pre>{
+                    <article class="project sci-card">
+                        <pre class="code mono">{
     "name": "auth-service",
     "stack": ["Go", "PostgreSQL"],
     "notes": "Microservicio de autenticación, JWT, refresh tokens"
 }</pre>
                         <div class="project-footer">
-                            <button class="btn mono">Ver</button>
+                            <button class="btn neon mono">Ver</button>
                         </div>
                     </article>
-
-                    <article class="project card code-like">
-                        <pre>{
-    "name": "analytics",
-    "stack": ["TypeScript", "ClickHouse"],
-    "notes": "Pipeline ETL, agregaciones en tiempo real"
-}</pre>
-                        <div class="project-footer">
-                            <button class="btn mono">Ver</button>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </main>
-
-        <script src="script.js"></script>
-    </body>
-</html>
