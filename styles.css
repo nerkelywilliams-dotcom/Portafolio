@@ -1,3 +1,98 @@
+:root{
+  --bg:#0D1117; /* deep dark */
+  --panel:#0A0A0A;
+  --muted:#9aa4b2;
+  --text:#e6edf3;
+  --accent-go:#00C6FF; /* golang cyan */
+  --accent-pg:#2F6E9E; /* postgres steel */
+  --white:#ffffff;
+  --card-border:rgba(255,255,255,0.04);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background-color:var(--bg);
+  color:var(--text);
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.008) 1px, transparent 1px);
+  background-size: 28px 28px, 28px 28px; /* subtle grid pattern */
+  background-position: 0 0, 0 0;
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 28px;
+  border-bottom:1px solid var(--card-border);
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+}
+.identity h1{margin:0;font-size:1.25rem}
+.role{margin:2px 0 0;color:var(--muted);font-size:0.9rem}
+
+.techs{display:flex;gap:10px}
+.tech{padding:6px 10px;border:1px solid var(--card-border);border-radius:4px;background:transparent;color:var(--muted);font-size:0.85rem}
+
+/* Monospace headings and labels */
+.mono{font-family:'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;font-weight:600}
+h1.mono{letter-spacing:0.2px}
+h2.mono{margin:0 0 12px}
+
+.container{padding:28px;max-width:1200px;margin:0 auto}
+
+/* Cards */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.006), transparent);
+  border:1px solid var(--card-border);
+  border-radius:4px;
+  padding:14px;
+  color:var(--text);
+}
+
+/* Metrics grid */
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:12px}
+.metric-header{color:var(--muted);font-size:0.85rem;margin-bottom:8px}
+.metric-body{display:flex;align-items:center;gap:10px}
+.metric-value{font-size:1.3rem;color:var(--white)}
+
+/* Ping indicator */
+.ping{width:10px;height:10px;border-radius:50%;display:inline-block;background:var(--accent-go);box-shadow:0 0 0 2px rgba(0,198,255,0.06)}
+.ping.offline{background:#4b5563}
+/* subtle blink but fast */
+@keyframes pingBlink{0%,100%{opacity:1}50%{opacity:0.35}}
+.ping{animation:pingBlink 800ms linear infinite}
+
+/* Projects grid: code-like blocks */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:12px}
+.code-like{font-size:0.92rem;padding:12px}
+.code-like pre{margin:0;white-space:pre-wrap;color:var(--muted);background:transparent;border-left:3px solid rgba(255,255,255,0.02);padding-left:10px}
+
+.project-footer{display:flex;justify-content:flex-end;margin-top:10px}
+.btn{background:transparent;color:var(--white);border:1px solid var(--card-border);padding:6px 10px;border-radius:4px;cursor:pointer}
+.btn.mono{font-family:'Fira Code', monospace}
+.btn:hover{border-color:var(--accent-go);color:var(--accent-go);transition:all 120ms linear}
+
+/* Badges and tech labels */
+.tech{transition:border-color 120ms linear,color 120ms linear}
+.tech:hover{border-color:var(--accent-pg);color:var(--white)}
+
+/* Remove diffuse shadows and slow transitions */
+*{box-shadow:none}
+
+/* Responsive tweaks */
+@media (max-width:640px){
+  .topbar{flex-direction:column;align-items:flex-start;gap:8px}
+  .container{padding:16px}
+}
 :root {
     --bg-primary: #0a0e17;
     --bg-secondary: #111827;
