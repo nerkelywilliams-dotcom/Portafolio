@@ -141,7 +141,12 @@ function setLanguage(lang) {
     });
 }
 
+// ==========================================================================
+// INTERACTIVE & DOM LOGIC
+// ==========================================================================
+
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inicialización de Idioma
     const langBtn = document.getElementById('lang-toggle');
     setLanguage(currentLang);
 
@@ -151,4 +156,103 @@ document.addEventListener('DOMContentLoaded', () => {
             setLanguage(newLang);
         });
     }
+
+    // 2. Navegación Móvil (Menú Hamburgo)
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinksContainer = document.getElementById('nav-links');
+
+    if (mobileMenuBtn && navLinksContainer) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('open');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksContainer.classList.remove('active');
+                mobileMenuBtn.classList.remove('open');
+            });
+        });
+    }
+
+    // 3. Navbar con efecto visual al hacer Scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar?.classList.add('scrolled');
+        } else {
+            navbar?.classList.remove('scrolled');
+        }
+    });
+
+    // 4. Smooth Scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 5. Animación de Contadores en la Sección de Métricas
+    const metricNumbers = document.querySelectorAll('.metric-number');
+    let animatedMetrics = false;
+
+    const animateMetrics = () => {
+        metricNumbers.forEach(metric => {
+            const target = parseInt(metric.getAttribute('data-target') || '0', 10);
+            const prefix = metric.getAttribute('data-prefix') || '';
+            const suffix = metric.getAttribute('data-suffix') || '';
+            let count = 0;
+            const speed = target / 50; // Ajusta la velocidad
+
+            const updateCount = () => {
+                count += speed;
+                if (count < target) {
+                    metric.innerText = `${prefix}${Math.ceil(count)}${suffix}`;
+                    setTimeout(updateCount, 30);
+                } else {
+                    metric.innerText = `${prefix}${target}${suffix}`;
+                }
+            };
+            updateCount();
+        });
+    };
+
+    // Observer para disparar animación cuando el usuario llega a las métricas
+    const metricsSection = document.getElementById('metrics');
+    if (metricsSection) {
+        const metricsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animatedMetrics) {
+                    animateMetrics();
+                    animatedMetrics = true;
+                }
+            });
+        }, { threshold: 0.3 });
+
+        metricsObserver.observe(metricsSection);
+    }
+
+    // 6. Animaciones de revelado al hacer scroll (Fade-in / Reveal)
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
 });
